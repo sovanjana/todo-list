@@ -1,0 +1,66 @@
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border:none;
+  background: white;
+}
+
+form button {
+  color: #ff6f47;
+  background: #f7fffe;
+}
+form button:hover {
+  background: #09ac1f;
+  color: white;
+}
+select{
+  font-size: 1rem;
+  border:none;
+  background: white;
+}
+.filter__todo {
+  padding: 1rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #b046be;
+  /* background: #ff6f47; */
+  cursor: pointer;
+  pointer-events: none;
+}
