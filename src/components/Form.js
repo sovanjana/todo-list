@@ -1,34 +1,52 @@
-import React from 'react'
-import "./Form.css"
-const Form = ({setInputText,setTodoList}) => {
-  const inputTextHandler=(e)=>{
-    setInputText(e.target.value);
-  }
-  const submitButtonHandler=(e)=>{
+import React,{useState} from "react";
+import "./Form.css";
+const Form = ({
+  
+  setTodoList,
+  todoList,
+  
+  setStatus,
+}) => {
+
+  const [inputText, setInputText] = useState("");
+
+  // const inputTextHandler = (e) => {
+  //   setInputText(e.target.value);
+  // };
+  const submitButtonHandler = (e) => {
     e.preventDefault();
-    setTodoList((prev)=>[...prev,e.target.value])
-  
-  }
-  
+    setTodoList([
+      ...todoList,
+      { text: inputText, completed: false, id: Math.random() * 100 },
+    ]);
+    setInputText("");
+  };
+  const selectHandler = (e) => {
+    setStatus(e.target.value);
+    // console.log(e.target.value)
+  };
 
   return (
-    <div className='form'>
+    <div className="form">
       <form>
-        <input onChange={inputTextHandler} type="text" />
+        <input value={inputText} onChange={e=>setInputText(e.target.value)} type="text" />
         <button onClick={submitButtonHandler} type="submit">
           +
         </button>
-        <div className='select'>
-          <select name="todos" className='filter__todo'>
+        <div className="select">
+          <select
+            onChange={selectHandler}
+            name="todos"
+            className="filter__todo"
+          >
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="uncompleted">Uncompleted</option>
           </select>
         </div>
       </form>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
