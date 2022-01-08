@@ -1,0 +1,46 @@
+.todo__list--item {
+	display: grid;
+	grid-template-columns: 1fr 60px 60px;
+	grid-gap: 8px;
+	height: 42px;
+	margin-top: 8px;
+	font-size: 1.5rem;
+	color: grey;
+}
+.todo__list--item span {
+	background: white;
+	display: flex;
+	align-items: center;
+}
+.todo__list--item button {
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	transition: all 100ms ease-in-out 0ms;
+}
+.todo__list--item button.delete-btn {
+	border-color: unset;
+	background: #f73f3f;
+	color: #a50000;
+	font-weight: 700;
+}
+.todo__list--item button.delete-btn:hover {
+	background: #a50000;
+	color: #f73f3f;
+}
+.todo__list--item button.complete-btn {
+	background: #10d652;
+	color: green;
+}
+.todo__list--item button.complete-btn:hover {
+	background: #008000;
+	color: #10d652;
+}
+.info {
+	padding: 0rem 0.5rem;
+	min-width: 20rem;
+}
+.completed {
+	text-decoration: line-through;
+	opacity: 0.5;
+}

@@ -1,18 +1,10 @@
-import React,{useState} from "react";
-import "./Form.css";
-const Form = ({
-  
-  setTodoList,
-  todoList,
-  
-  setStatus,
-}) => {
+import React, { useState } from "react";
 
+import "../assets/css/Form.css";
+
+const Form = ({ setTodoList, todoList, setStatus }) => {
   const [inputText, setInputText] = useState("");
 
-  // const inputTextHandler = (e) => {
-  //   setInputText(e.target.value);
-  // };
   const submitButtonHandler = (e) => {
     e.preventDefault();
     setTodoList([
@@ -21,24 +13,18 @@ const Form = ({
     ]);
     setInputText("");
   };
+
   const selectHandler = (e) => {
     setStatus(e.target.value);
-    // console.log(e.target.value)
   };
 
   return (
     <div className="form">
       <form>
-        <input value={inputText} onChange={e=>setInputText(e.target.value)} type="text" />
-        <button onClick={submitButtonHandler} type="submit">
-          +
-        </button>
+        <input value={inputText} onChange={e => setInputText(e.target.value)} type="text" />
+        <button onClick={submitButtonHandler} type="submit">+</button>
         <div className="select">
-          <select
-            onChange={selectHandler}
-            name="todos"
-            className="filter__todo"
-          >
+          <select onChange={selectHandler} name="todos" className="filter__todo">
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="uncompleted">Uncompleted</option>
